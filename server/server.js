@@ -9,4 +9,9 @@ app.use(express.json());
 
 app.use('/api', apiRouter);
 
-app.listen(3000);
+app.listen(3000, () => {
+    console.log('Server Running on port 3000');
+}).on('error', error => {
+    console.log(error.message);
+    process.exit(1);
+});
