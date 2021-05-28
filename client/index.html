@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building APIs with ExpressJS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Nav -->
+    <nav class="navbar sticky-top navbar-dark bg-info p-3 mb-5">
+        <div class="container-fluid">
+            <a href="#" class="navbar-brand">🐦 Chirper</a>
+            <div class="d-flex">
+                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modal" data-type="add">Chirp</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main -->
+    <main class="container">
+        <div class="row justify-content-center">
+            <div id="chirps-container" class="col-sm-4">
+                <!-- Magic Happens Here -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalLabel"></h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <textarea name="chirpContent" class="form-control border-0" id="chirpContent" rows="3" placeholder="What's on your mind?"></textarea>
+            </div>
+            <div class="modal-footer justify-content-between">
+                <div class="input-group w-50">
+                    <span class="input-group-text">@</span>
+                    <input id="user" name="user" type="text" class="form-control" placeholder="Username" aria-label="Username" />
+                </div>
+                <div class="d-flex">
+                    <button type="button" class="btn btn-secondary me-1" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="saveButton"></button>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
+</html>

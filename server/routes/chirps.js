@@ -13,7 +13,8 @@ router.get('/:id?', (req, res) => {
 
 router.post('/', (req, res) => {
     chirpsStore.CreateChirp(req.body);
-    res.sendStatus(200);
+    console.log(req.body);
+    res.status(200).json({ message: 'Chirp has been added successfully.' });
 })
 
 router.delete('/:id?', (req, res) => {
@@ -30,9 +31,11 @@ router.put('/:id?', (req, res) => {
     let id = req.params.id;
     if(id) {
         chirpsStore.UpdateChirp(id, req.body);
-        res.sendStatus(200);
+        console.log(id);
+        console.log(req.body);
+        res.status(200).json({ message: 'Chirp has been edited successfully.' });
     } else {
-        res.send(chirpsStore.GetChirps());
+        res.status(400).json({ message: 'Chirp ID must be provided' });
     }
 })
 
